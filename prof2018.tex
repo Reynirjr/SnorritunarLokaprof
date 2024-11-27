@@ -172,12 +172,215 @@ Hver? Eitt rangt svar gefur \underline{núll} stig.
     \hline
     \textbf{a}  & \textbf{b}  & \textbf{c}  & \textbf{d}  & \textbf{e}  & \textbf{f}  & \textbf{g}  & \textbf{h}  & \textbf{i}  & \textbf{j}  & \textbf{k}  & \textbf{l} & \textbf{m}   \\ \hline
      & & & & & & & & & & & & \\ \hline
-     
  \end{tabularx}
 
  \newpage
 
  \section{3.}
+    Vakningarfærsla falls í bálkmótuðu forritunarmáli eins og Scheme inniheldur sum eftirfarandi atriða. Hver? Eitt rangt svar gefur \underline{núll} sitg.
+
+    \begin{enumerate}[label = \alph*)]
+        \item Staðværar breytur fallsins.
+        \item Staðværar breytur fallsins sem kallaði á fallið
+        \item Víðvlrar breytur sem eru aðgengilegar i fallinu.
+        \item Skraarkerfi tölvunnar.
+        \item viðföng fallsins.
+        \item Aðgangshlekk (tengihlekk).
+        \item Stýrihlekk.
+        \item Vendivistfang.
+        \item Benda á öll föll sem hægt er að kalla á úr fallinu.
+        \item Benda á allar lifandi vakningarfærslur. 
+        \item Alla hlutina sem til eru í kerfinu.
+        \item Vakningarfærslur allra falla sem hægt er að kalla á.
+        \item Nöfn allra falla sem hægt er að kalla á.
+    \end{enumerate}
+
+    \textbf{Svar}:
+
+    \begin{tabularx}{\textwidth}{ |X|X|X|X|X|X|X|X|X|X|X|X|X|}
+        \hline
+        \textbf{a}  & \textbf{b}  & \textbf{c}  & \textbf{d}  & \textbf{e}  & \textbf{f}  & \textbf{g}  & \textbf{h}  & \textbf{i}  & \textbf{j}  & \textbf{k}  & \textbf{l} & \textbf{m}   \\ \hline
+         & & & & & & & & & & & & \\ \hline
+     \end{tabularx}
+
+     \newpage
+
+     \section{4.}
+     Íhugið myndina sem sýnir földun falla P, Q, R, S og T.
+
+     \begin{center}
+        \includegraphics[scale = 1]{myndir/foldun.png}
+     \end{center}
+
+     Samsvarandi Scheme forritstexti er einnig sýndur í tveimur jafngildum útgáfum 
+     hlið við hlið. 
+
+     \begin{verbatim}
+    (define ( P...)                        (define(P ...)
+     (define (Q ...)                        (define(S ...)
+      (define (R ...)                        (define (T...)
+       ...[stifn R/body of R]                  ...[stofn T/body of T]
+      )                                      )
+      ...[stofn Q/body of Q]                 ...[stofn S/body of S]
+     )                                      )
+     (define (S ...)                        (define (Q ...)
+      (define (T...)                         (define (R ...)
+       ...[stofn T/body of T]                 ...[stofn R/body of R]
+      )                                      )
+      ...[stofn S/body of S]                 ...[stofn Q/body of Q]
+     )                                      )
+     ...[stofn P/body of P]                 ...[stofn P/body of P]
+    )                                       )
+     \end{verbatim}
+    
+     Fyllið út eftirfarandi töflur með því að setja krossa við sannar fullyrðingar.
+     Eitt rangt svar gefur \underline{núll} í einkunn fyrir dæmið.
+
+     \textbf{Svar}:
+
+     kalla má á P úr:
+
+
+     \begin{tabularx}{\textwidth}{ |X|X|X|X|X|}
+        \hline
+        \textbf{P}  & \textbf{Q}  & \textbf{R}  & \textbf{S}  & \textbf{T} \\ \hline
+         & & & & \\ \hline
+     \end{tabularx}
+
+
+     kalla má á Q úr:
+
+     
+     \begin{tabularx}{\textwidth}{ |X|X|X|X|X|}
+        \hline
+        \textbf{P}  & \textbf{Q}  & \textbf{R}  & \textbf{S}  & \textbf{T} \\ \hline
+         & & & & \\ \hline
+     \end{tabularx}
+
+
+     kalla má á R úr:
+
+     
+     \begin{tabularx}{\textwidth}{ |X|X|X|X|X|}
+        \hline
+        \textbf{P}  & \textbf{Q}  & \textbf{R}  & \textbf{S}  & \textbf{T} \\ \hline
+         & & & & \\ \hline
+     \end{tabularx}
+
+     kalla má á S úr:
+
+     
+     \begin{tabularx}{\textwidth}{ |X|X|X|X|X|}
+        \hline
+        \textbf{P}  & \textbf{Q}  & \textbf{R}  & \textbf{S}  & \textbf{T} \\ \hline
+         & & & & \\ \hline
+     \end{tabularx}
+
+     kalla má á T úr:
+
+     
+     \begin{tabularx}{\textwidth}{ |X|X|X|X|X|}
+        \hline
+        \textbf{P}  & \textbf{Q}  & \textbf{R}  & \textbf{S}  & \textbf{T} \\ \hline
+         & & & & \\ \hline
+     \end{tabularx}
+
+     Staðværar breytur í P má nota í:
+
+     
+     \begin{tabularx}{\textwidth}{ |X|X|X|X|X|}
+        \hline
+        \textbf{P}  & \textbf{Q}  & \textbf{R}  & \textbf{S}  & \textbf{T} \\ \hline
+         & & & & \\ \hline
+     \end{tabularx}
+
+
+     Staðværar breytur í Q má nota í:
+
+     
+     \begin{tabularx}{\textwidth}{ |X|X|X|X|X|}
+        \hline
+        \textbf{P}  & \textbf{Q}  & \textbf{R}  & \textbf{S}  & \textbf{T} \\ \hline
+         & & & & \\ \hline
+     \end{tabularx}
+
+
+     Staðværar breytur í R má nota í:
+
+     
+     \begin{tabularx}{\textwidth}{ |X|X|X|X|X|}
+        \hline
+        \textbf{P}  & \textbf{Q}  & \textbf{R}  & \textbf{S}  & \textbf{T} \\ \hline
+         & & & & \\ \hline
+     \end{tabularx}
+
+
+
+     Staðværar breytur í S má nota í:
+
+     
+     \begin{tabularx}{\textwidth}{ |X|X|X|X|X|}
+        \hline
+        \textbf{P}  & \textbf{Q}  & \textbf{R}  & \textbf{S}  & \textbf{T} \\ \hline
+         & & & & \\ \hline
+     \end{tabularx}
+
+
+     \newpage
+
+     \section{5.}
+     Eftirfarandi forritstexti er í einhverju ímynduðu forritunarmáli.
+     \begin{verbatim}
+        void f(x,y)
+        {
+            y = 3;
+            print x,y;
+            x = 2;
+        }
+        int i,a[10];
+        for(int i= 0; i != 10; i++) a[i] = i +1;
+        f(a[a[0]],a[0]);
+        print a[0], a[1], a[2], a[3];
+     \end{verbatim}
+
+     Hvað skrifar þetta forrit (sex gildi í hvert skipti) ef viðföngin eru:
+
+     \subsection{a)} Gildisviðföng 
+
+     \subsection{b)} Tilvísunarviðföng
+
+     \subsection{c)} Nafnviðföng
+
+
+     \newpage
+
+     \begin{center}
+        \textbf{Hluti II - Listavinnsla o.fl.}
+
+
+        \textbf{Svarið að minnsta kosti tveimur spurningum i þessum hluta - Munið að svara a.m.k. 10 spurningum í heild}
+     \end{center}
+
+     \section{6.}
+     Skrifið fall í Scheme, Caml, Morpho eða Haskell sem tekur eitt viðfang sem er listi lista af fleytitölum milli 0 og 1 og skilar tölu sem 
+     er stærsta lággildi innri listanna, þ.e. stærst af þeim tölum sem fást 
+     þegar fundinn er minnsta tala í hverjum innri lista. Þið skuluð reikna
+     með því að hágildi í tóma menginu sé 0 og lággildi í tóma menginu sé 1.
+     Munið fallslýsingar, eing og alltaf. Fallið þarf að skila viðeigandi 
+     gildi bæði fyrir toman lista og fyrir lista sem einungis inniheldur tóma lista.
+
+     \textbf{Svar:}
+
+
+
+     \newpage 
+
+     \section{7.}
+
+     Skrifið fall Zip2 i Sheme, CAML, Morpho eða Haskell sem tekur 
+     tvíundaraðgerð (fall) og tvo jafnlanga lista sem viðföng og skilar lista þeirra útkomna sem fást þegar tvíundaraðgerðinni er beitt á
+     gildin
+
 
 \begin{lstlisting}
 ;;; Notkun:
