@@ -1,0 +1,158 @@
+\documentclass{article}
+
+% Encodings, page setup, paragraph formatting, font
+\usepackage[top=0.9in, bottom=1in, left=1.5in, right=1.5in]{geometry}
+\usepackage[icelandic]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[sc]{mathpazo}
+\usepackage[parfill]{parskip}
+\usepackage{cancel}
+% Tables and lists
+\usepackage{booktabs,tabularx}
+\usepackage{multirow}
+\usepackage{enumerate}
+\usepackage{adjustbox}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{xcolor}
+% Math
+\usepackage{amsmath, amsfonts, amssymb, amsthm}
+% Graphics
+\usepackage{graphicx}
+\usepackage{forest}
+\usepackage{tikz}
+\usetikzlibrary{positioning, shapes, arrows.meta}
+
+
+\usepackage{listingsutf8}
+\definecolor{commentcolor}{RGB}{255, 0, 255} % Bleikur
+\definecolor{keywordcolor}{RGB}{139, 69, 19}   % Brúnn
+\definecolor{stringcolor}{RGB}{0, 0, 255}      % Blár
+\definecolor{numbercolor}{RGB}{0, 128, 0}      % Grænn
+\definecolor{identifiercolor}{RGB}{0, 0, 255}
+%Morpho
+\lstdefinelanguage{CustomLang}{
+    alsoletter={=},
+    keywords={rec, fun, if, else, return},
+    sensitive=true,
+    comment=[l]{;;;},
+    commentstyle=\color{commentcolor},
+    morestring=[b]",
+    stringstyle=\color{stringcolor},
+}
+
+\lstset{
+    language=CustomLang,
+    basicstyle=\ttfamily,
+    keywordstyle=\color{keywordcolor},
+    commentstyle=\color{commentcolor},
+    identifierstyle=\color{identifiercolor},
+    stringstyle=\color{stringcolor},   
+    showstringspaces=false,
+    numbers=none,
+    tabsize=2,
+    breaklines=true,
+    columns=fullflexible,
+    keepspaces=true,
+    inputencoding=utf8, 
+    extendedchars=true,  
+    literate=
+        {á}{{\'a}}1
+        {ð}{{\dh}}1
+        {é}{{\'e}}1
+        {í}{{\'i}}1
+        {ó}{{\'o}}1
+        {ú}{{\'u}}1
+        {ý}{{\'y}}1
+        {þ}{{\th}}1
+        {æ}{{\ae}}1
+        {ö}{{\"o}}1
+        {Á}{{\'A}}1
+        {Ð}{{\DH}}1
+        {É}{{\'E}}1
+        {Í}{{\'I}}1
+        {Ó}{{\'O}}1
+        {Ú}{{\'U}}1
+        {Ý}{{\'Y}}1
+        {Þ}{{\TH}}1
+        {Æ}{{\AE}}1
+        {Ö}{{\"O}}1,
+}
+
+
+% Hyphenation
+\hyphenpenalty=5000
+% Page and section numbering
+\setcounter{secnumdepth}{-1} 
+\pagenumbering{gobble}
+\title{Forritunarmál}
+\author{Benjamín}
+\date{11.27.2024}
+
+\begin{document}
+
+\maketitle
+\begin{center}
+
+\Huge{\textbf{TÖL304G Final Exam}}
+
+
+\LARGE{\textbf{TÖL304 Lokapróf}}
+
+\vspace{5em}
+
+\includegraphics[scale = 0.5]{myndir/bugun.jpg}
+\end{center}
+
+
+\newpage
+
+
+\begin{center}
+    \textbf{Hluti I - Bálkmótun o.fl.}
+
+    \textbf{Svarið að minnsta kosti tveimur spurningum í þessum hluti - Munið að svara a.m.k. 10 spurningum í heild}
+\end{center}
+
+\section{1.}
+
+Hverjar eftirfarandi fullytðinga um lokanir eru sannar? Tvö röng svör gefa núll punkta.
+
+\begin{itemize}
+    \item[a)] Lokanir innihalda fallsbendi.
+    \item[b)] Lokanir eru til í C.
+    \item[c)] Lokanir eru til í Scheme.
+    \item[d)] Lokanir eru til í CAML.
+    \item[e)] Lokanir eru til í Morpho.
+    \item[f)] Lokanir eru aðeins mögulegar ef vakningarfærslur eru í kös.
+    \item[g)] Lokanir má nota til að utfæra strauma í Scheme.
+    \item[h)] Lokanir innihalda tengihlekk(aðgangshlekk).
+    \item[i)] Lokanir innihalda stýrihlekk.
+    \item[j)] Lokanir innihalda straum.  
+    \item[k)] Lokanir eru nauðsynlegar til að skila staðværu falli sem skilagildi falls í bálkmótuðum forritunarmálum.
+    \item[l)] Lokanir eru nauðsynlegat til að senda staðvær föll sem viðföng í föll í bálkmótuðum forritunarmálum.        
+\end{itemize}
+
+\textbf{Svar}:
+
+\begin{tabularx}{\textwidth}{ |X|X|X|X|X|X|X|X|X|X|X|X|}
+   \hline
+   a & b & c & d & e & f & g & h & i & j & k & l \\ \hline
+    & & & & & & & & & & & \\ \hline
+    
+\end{tabularx}
+
+
+\newpage
+
+\section{2}
+
+\begin{lstlisting}
+;;; Notkun:
+;;; Fyrir:
+;;;
+;;; Gildi:
+writeln("Hello world");  
+\end{lstlisting}
+
+\end{document}
