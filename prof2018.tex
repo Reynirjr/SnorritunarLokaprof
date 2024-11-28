@@ -25,6 +25,7 @@
 % Custom Commands til að auðvelda lífið
 \newcommand{\sv}{\textbf{Svar:}}
 \newcommand{\bo}[1]{\textbf{#1}}
+\newcommand{\enum}{\begin{enumerate}[label = \alph*.]}
 
 
 \usepackage{listingsutf8}
@@ -171,11 +172,6 @@ Hver? Eitt rangt svar gefur \underline{núll} stig.
 
 \textbf{Svar}:
 
-\begin{tabularx}{\textwidth}{ |X|X|X|X|X|X|X|X|X|X|X|X|X|}
-    \hline
-    \textbf{a}  & \textbf{b}  & \textbf{c}  & \textbf{d}  & \textbf{e}  & \textbf{f}  & \textbf{g}  & \textbf{h}  & \textbf{i}  & \textbf{j}  & \textbf{k}  & \textbf{l} & \textbf{m}   \\ \hline
-     & & & & & & & & & & & & \\ \hline
- \end{tabularx}
 
  \newpage
 
@@ -433,18 +429,57 @@ Hver? Eitt rangt svar gefur \underline{núll} stig.
      \begin{itemize}
         \item[a.] Hönnunarskjal sem inniheldur lýsingar (notkun/fyrir/eftir) fyrir
                   öll influtt og útflutt atriði einingarinnar.
-        \item[b.] Smíð einingarinnar, þar sem sleðða má útfærslu allra 
+        \item[b.] Smíð einingarinnar, þar sem sleppa má útfærslu allra 
+                  aðgerða nema þeirri sem bætir gildi í forgangsbiðröðina.
+                  Athugið að sýna þarf fastayrðingu gagna.
                   
      \end{itemize}
+     Unnt skal vera að nota einingaraðgerðir til að búa til afbrigði af 
+     einingunni sem gefa forgangsbiðraðir fyrir hvaða gildi sem er sem
+     hafa viðeigandi samanburðarfall. Þið ráðið hvort forgangsbiðr-ðin er
+     Útfærð sem hlutur eða ekki.
+
+     \sv
 
 
 
-\begin{lstlisting}
-;;; Notkun:
-;;; Fyrir:
-;;;
-;;; Gildi:
-writeln("Hello world");  
-\end{lstlisting}
+
+
+    \begin{lstlisting}
+    ;;; Notkun:
+    ;;; Fyrir:
+    ;;;
+    ;;; Gildi:
+    writeln("Hello world");  
+    \end{lstlisting}
+
+
+    \newpage
+    \section{11.}
+    Hverjar af eftirfarandi fullyrðingum eru í samræmi við meginregluna um upplýsingahuld? 
+    Það gætu verið núll, ein eða fleiri. TVö röng svör gefa \underline{núll} stig.
+
+    \enum
+    \item Fastayrðing gagna einingar skal vera fullkomlega aðgengileg smiðum einingarinnar.
+    \item Notendur einingar geta breytt gastayrðingu gagna einingarinnar.
+    \item Gefa skal notendum einingar fullkomnar upplýsingar um smíð einingarinnar.
+    \item Fastayrðing gagna einingar skal vera fullkomlega aðgengileg notendum einingarinnar.
+    \item Fastayrðing gagna einingar skal ekki vera aðgengileg smiðum einingarinnar.
+    \item Fastayrðing gagna einingar skal ekki vera aðgengileg notendum einingarinnar.
+    \item Smiðir einingar geta breytt fastayrðingu gagna einingarinnar.
+\end{enumerate}
+
+
+    \sv
+
+    
+\begin{tabularx}{\textwidth}{ |X|X|X|X|X|X|X|}
+    \hline
+    \textbf{a}  & \textbf{b}  & \textbf{c}  & \textbf{d}  & \textbf{e}  & \textbf{f}  & \textbf{g} \\ \hline
+     & & & & & & \\ \hline
+ \end{tabularx}
+
+
+
 
 \end{document}
