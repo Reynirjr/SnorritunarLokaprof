@@ -480,6 +480,72 @@ Hver? Eitt rangt svar gefur \underline{núll} stig.
  \end{tabularx}
 
 
+ \newpage
+
+ \section{12.}
+
+ íhugið klasa A og B sem er undirklasi A. Gerið ráð fyrir að klasi A innihaldi boð f með forskilyrði $F_A$ og eftirskilyrði $E_A$.
+ \begin{verbatim}
+    //Notkun: x.f(...);
+    //Fyrir:  F_A
+    //Eftir:  E_A
+ \end{verbatim}
+
+ Gerið ráð fyrir að í klasa B sér bopip f endurskilgreint með
+ \begin{verbatim}
+    //Notkun: x.f(...);
+    //Fyrir:  F_A
+    //Eftir:  E_A
+ \end{verbatim}
+
+ Hvaða vensl þurfa þa gilda milli $F_A, E_A, F_B \text{ og } E_B$? Svarið þarf að
+ vera tæmandi, þ.e. tilgreina nauðsyndleg og nægjanleg vendl.
+
+ \sv
+
+ \newpage
+
+ \begin{center}
+    \bo{Hluti IV - Ýmislegt}
+
+
+    \bo{Svarið að minnsta kosti einni spurningu í þessum hluta 
+    Munið að svara a.m.k. 10 spurningum í heild}
+ \end{center}
+
+ \section{13.}
+ Lýsið ruslasöfnunaraðferðinni sem gengur undir nafninu 
+ tilvísunartalning. Koma þarf fastayrðing gagna og undir hvaða 
+ kringumstæðum minni er skilað.
+
+
+ \sv
+
+ \newpage
+ \section{14.}
+ Sýnið BNF, EBNF, samhengisfrjálsa mállýsingu (CFG) eða málrit
+ fyrir mál lölegra segða yfir stafróið \text{\{x,+,(,)\}} þar sem $x$ er
+ breytunafn og $+$ er tvíundaraðgerð
+
+ Dæmi um streng í málinu.
+ \begin{verbatim}
+    x
+    x + x
+    x + (x)
+    (((x)))
+    x + (x + x + (x + x) + x) + x + x
+ \end{verbatim}
+ 
+ Dæmi um streng ekki í málinu.
+
+\begin{verbatim}
+    \epsilon (tómi strengurinn)
+    (
+    )
+    +x
+    ((x)
+ \end{verbatim}
+
 
 
 \end{document}
