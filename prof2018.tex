@@ -381,7 +381,37 @@ Hver? Eitt rangt svar gefur \underline{núll} stig.
 
      \subsection{a)} Gildisviðföng 
 
+    \sv 
+    Viðföngin eru metin og gildin þeirra eru afrituð inn í fallið. Breytingar á viðföngum innan fallsins hafa engin áhrif á upprunalegu breyturnar.
+
+    Svo þá munu gildin í f ekki breyta upprunulegu gildunum svo:
+    \begin{verbatim}
+        for lykkjan gerir
+        a[0] = 1
+        a[1] = 2
+        a[2] = 3
+        a[3] = 4
+        a[4] = 5
+        a[5] = 6
+        a[6] = 7
+        a[7] = 8
+        a[8] = 9
+        a[9] = 10
+        svo 
+        f(a[a[0]], a[0])
+        gerir
+        f(a[1], a[0])
+        sem kallar á
+        f(2, 1)
+
+        svo prentað
+        2 3
+        1 2 3 4
+    \end{verbatim}
+
+
      \subsection{b)} Tilvísunarviðföng
+     
 
      \subsection{c)} Nafnviðföng
 
