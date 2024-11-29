@@ -473,10 +473,86 @@ Hver? Eitt rangt svar gefur \underline{núll} stig.
      er stærsta lággildi innri listanna, þ.e. stærst af þeim tölum sem fást 
      þegar fundinn er minnsta tala í hverjum innri lista. Þið skuluð reikna
      með því að hágildi í tóma menginu sé 0 og lággildi í tóma menginu sé 1.
-     Munið fallslýsingar, eing og alltaf. Fallið þarf að skila viðeigandi 
+     Munið fallslýsingar, eins og alltaf. Fallið þarf að skila viðeigandi 
      gildi bæði fyrir toman lista og fyrir lista sem einungis inniheldur tóma lista.
 
      \textbf{Svar:}
+
+     \bo{í Scheme}:
+     Ég ætla nota bara grunnskipanir
+
+    \begin{lstlisting}
+    ;;; Notkun: (min-i-lista lst)
+    ;;; Fyrir: lst er listi af fleytitölum á milli 0 og 1
+    ;;; Eftir: skilar minnsta gildi í listanum, eða 1 ef listinn er tómur
+    (define (min-i-lista lst)
+        (if (null? lst)
+            1
+            (min-helper (car lst) (cdr lst))
+        )
+    )
+
+    ;;; Notkun: (min-helper current-min lst)
+    ;;; Fyrir: current min er fleytitala, lst er listi af fleytitölum
+    ;;; Eftir: Skilar minnsta gildi í listanum
+    (define (min-helper current-min lst)
+        (if (null? lst)
+            current-min
+            (let ((next-value (car lst)))
+                (if (< next-value current-min)
+                    (min-helper next-value (cdr lst))
+                    (min-helper current-min (cdr lst))
+                )
+            )
+        )
+    )
+
+    ;;; Notkun: (max-i-lista lst)
+    ;;; Fyrir: lst er listi af fleytitölum 
+    ;;; Gildi: Skilar stærsta gildinu í listanum, eða 0 ef listinn er tómur
+    (define (max-i-lista lst)
+        (if (null? lst)
+            0
+            (max-helper (car lst) (cdr lst))
+        )
+    )
+
+    ;;; Notkun: (max-helper current-max lst)
+    ;;; Fyrir: lst er listi af fleytitölum current-max er fleytitala
+    ;;; Gildi: Skilar stærsta gildinu í listanum lst
+    (define (max-helper current-max lst)
+        (if (null? lst)
+            current-max
+            (let ((next-value (car lst)))
+                (if (> next-value current-max)
+                    (max-helper next-value (cdr lst))
+                    (max-helper current-max (cdr lst))
+                )
+            )
+        )
+    )
+
+    ;;; Notkun: (list-of-mins lst-of-lsts)
+    ;;; Fyrir: lst-of-lsts er listi af fleytitölu listum fleytitölurnar eru á milli 0 og 1
+    ;;; Eftir: skilar lista af minnstu gildum í öllum listunum
+    (define (list-of-mins lst-of-lsts)
+        (if (null? lst-of-lsts)
+            '()
+            (let((min-value (min-i-lista (car lst-of-lsts))))
+                (cons min-value (list-of-mins (cdr lst-of-lsts)))
+            )
+        )
+    )
+
+    ;;; Notkun: (largest-min lst-of-lsts)
+    ;;; Fyrir: lst-of-lsts er listi af listum af fleytitölum á milli 0 og 1
+    ;;; Eftir: skilar stærsta lággildi innri listanna
+    (define (largest-min lst-of-lsts)
+        (let((mins (list-of-mins lst-of-lsts)))
+            (max-i-lista mins)
+        )
+    )
+    \end{lstlisting}
 
 
 
