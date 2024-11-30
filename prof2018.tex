@@ -588,7 +588,7 @@ Hver? Eitt rangt svar gefur \underline{núll} stig.
      \newpage
      \section{8.}
      Skrifið ykkar eigin útgáfur af föllunum tveimur sem í CAML Light 
-     eru kölluð \text{it\_list} og \text{list\_it}. Í Haskell eru þau kölluð foldl og foldr. 
+     eru kölluð \text{list\_it} og \text{list\_it}. Í Haskell eru þau kölluð foldl og foldr. 
      Þið megið skrifa þessi föll í Scheme, CAML, Morpho eða Haskell. Notið
      ekki lykkjur í Morpho. Kallið föllin myLeft og myRight. þið megið nota aðra röð viðfanga en í \text{it\_list og it\_list}. Sjáið til þess að a.m.k.
      annað fallið sé Halaendurkvæmt og tiltakið hvort það er. Notið 
@@ -701,11 +701,75 @@ Hver? Eitt rangt svar gefur \underline{núll} stig.
 
 
     \begin{lstlisting}
-    ;;; Notkun:
-    ;;; Fyrir:
-    ;;;
-    ;;; Gildi:
-    writeln("Hello world");  
+    {;;;
+    Hönnun
+    ======
+
+    Útflutt atriði
+    --------------
+
+    Notkun: pq = makePQ();
+    Fyrir:  Ekkert
+    Eftir:  pq er ný tóm forgangsbiðröð
+
+    Innflutt atriði 
+    ---------------
+
+    Notkun: b = x <<== y;
+    Fyrir:  x og y eru gildi af þeirri gerð sem við notendum
+            sem lykla í forgangsbiðröðum
+    Eftir:  b er satt ef lykillinn x má vera á undan lyklinum y
+
+    Notkun: b = pq.isEmpty() ;
+    Fyrir:  pq er forgangsbiðröð
+    Eftir:  b er satt þá og því aðeins að pq sé tóm
+
+    Notkun: g = pq.get();
+    Fyrir:  pq er forgangsbiðröð, ekki tóm
+    Eftir:  g er gildi sem var fjarlægt ú pq.
+            g hafði lykil sem mátti vera fyrir framan
+            lykla allra annara gilda í pq.
+
+    Notkun: pq.add(k,g);
+    Fyrir:  pq er forgangsbiðröð,
+            k er lykilgildi þ.e. gildi sem er löglegt
+    Eftir:  Búið er að bæta gildinu g í forgangsbiðröðina
+            undir lyklinum k.
+
+    
+    ;;;}
+    
+    "pq.mmod" = 
+    {{
+    makePQ = 
+        obj()
+        {
+            var list = [];
+            {;;;
+                Fastayrðing gagna:
+                 Forgangsbiðröð sem inniheldur lykla/gilda-pör
+                 (k1,g1),...,(kN,gN), þar sem fremri lyklar í 
+                 rununni mega vera fyrir framan aftari lykla,
+                 er geymd með list == [[k1$g1],...,[kN$gN]]
+            ;;;}
+            msg isEmpty()
+                {
+                    ...
+                };
+            msg put(k,g)
+                {
+                    ...
+                };
+            msg get()
+                {
+                    val res = tail(head(list));
+                    list = tail(list);
+                    return res;
+                };
+        }
+
+    }}
+    ;
     \end{lstlisting}
 
 
