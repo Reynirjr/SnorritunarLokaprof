@@ -591,7 +591,7 @@ Hver? Eitt rangt svar gefur \underline{núll} stig.
      eru kölluð \text{it\_list} og \text{list\_it}. Í Haskell eru þau kölluð foldl og foldr. 
      Þið megið skrifa þessi föll í Scheme, CAML, Morpho eða Haskell. Notið
      ekki lykkjur í Morpho. Kallið föllin myLeft og myRight. þið megið nota aðra röð viðfanga en í \text{it\_list og it\_list}. Sjáið til þess að a.m.k.
-     annap fallið sé Halaendurkvæmt og tiltakið hvort það er. Notið 
+     annað fallið sé Halaendurkvæmt og tiltakið hvort það er. Notið 
      aðeins einföld innbygð föll svo sem car, cdr og null?.
 
 
@@ -639,7 +639,35 @@ Hver? Eitt rangt svar gefur \underline{núll} stig.
      \sv 
 
 
+    \begin{lstlisting}
+    ;;; Notkun: (filter-range x a b)
+    ;;; Fyrir: 
+    ;;;        - x er listi af tölum
+    ;;;        - a og b eru tölur  
+    ;;; Eftur: Skilar lista af þeim tölum z í x þar sem a <= z <= b.
+    (define (filter-range x a b)
+        (filter-range-helper x a b '())
+    )
 
+    ;;; Notkun: (filter-range-helper lst a b acc)
+    ;;; Fyrir:
+    ;;;        - lst er listi af tölum
+    ;;;        - a, b eru tölur 
+    ;;;        - acc er listi
+    ;;; Eftir: Skilar lista af tölum í lst sem eru >= a og <= b.
+    (define (filter-range-helper lst a b acc)
+        (if (null? lst)
+            (reverse acc)
+            (let ((z (car lst)))
+                (if (and (>= z a) (<= z b))
+                    (filter-range-helper (cdr lst) a b (cons z acc))
+                    (filter-range-helper (cdr lst) a b acc)
+                )
+            )
+        )
+    )
+
+    \end{lstlisting}
 
      \newpage
 
