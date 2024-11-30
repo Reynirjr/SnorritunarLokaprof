@@ -600,6 +600,33 @@ Hver? Eitt rangt svar gefur \underline{núll} stig.
 
      \textbf{Forritstexti (með lýsingum)}:
 
+     \begin{lstlisting}
+     ;;; Notkun: (myLeft bin init lst)
+     ;;; Fyrir: 
+     ;;;        - bin er tvíundaraðgerð
+     ;;;        - init er upphafsgildi
+     ;;;        - lst er listi af gildum
+     ;;; Eftir: skilar niðurstöðu þess að fella lst frá vinstri með f og init
+     (define (myLeft bin init lst)
+        (if (null? lst)
+        init
+        (myLeft bin (bin (car lst)) (cdr lst))
+        )
+     )
+     ;;; Notkun: (myRight bin init lst)
+     ;;; Fyrir: 
+     ;;;        - bin er tvíundaraðgerð
+     ;;;        - init er upphafsgildi
+     ;;;        - lst er listi af gildum
+     ;;; Eftir: Skilar niðurstöðu þessa að fella lst frá hægri með f og init
+     (define (myRight bin init lst)
+        (if (null? lst)
+            init
+            (bin (car lst) (myRight bin init (cdr lst)))
+        )   
+     )
+     \end{lstlisting}
+
 
      \newpage
      \section{9.}
