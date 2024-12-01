@@ -98,7 +98,7 @@
 \maketitle
 
 \begin{center}
-    \Huge{Lokapróf Forritunarmál 2018-2023}
+    \Huge{Lokapróf Forritunarmál 2018, 2019, 2021, 2022,2023}
 \end{center}
 
 \newpage
@@ -161,29 +161,6 @@ forritunarmálum
      & & & & & & & & & & &  \\ \hline
 \end{tabularx}
 
-\newpage
-
-\bo{Íhugið eftirfarandi forritstexta í Scheme.}
-
-\begin{verbatim}
-(define (p x)
-...(define a 1)
-    (define b (lambda () (+ a x)))
-    (define c (b))
-    (define (d y) (+ x y))
-    (define (e z) (lambda (v) (+ x z v)))
-    (define f (lambda (w) (e w)))
-    (define g (f x))
-    ...
-)
-\end{verbatim}
-
-\enum
-\item Hverjar af breytunum a,…,g inni í p innihalda lokanir?
-\item Fyrir sérhverja breytu sem inniheldur lokun, tilgreinið nafn
-      þess falls sem tengihlekkur lokunarinnar vísar á
-      vakningarfærslu fyrir.
-\end{enumerate}
 
 \newpage
 \section{Vakningarfærsla}
@@ -217,10 +194,174 @@ séð, ef eitthvert er
      & & & & & & & & & & & & \\ \hline
 \end{tabularx}
 
+\newpage
+
+\section{Foldun}
+
+Íhugið mydnina sem sýnir földun A,B,C,D og E
+
+\includegraphics[scale = 1 ]{myndir/AbcdFoldun.png}
+
+Samsvarandi Scheme forritstexti er einnig sýndur í tveimur
+jafngildum útgáfum hlið við hlið.
+
+\begin{verbatim}
+    (define (A ...)              (define (A ...)
+     (define (B ...)              (define (E ...)
+      (define (C ...)               ...[stofn E/body of E]
+       (define (D ...)            )
+        ...[stofn D/body of D]    (define (B ...)
+       )                           (define (C ...)
+       ...[stofn C/body of C]       (define (D ...)
+      )                                ...[stofn D/body of D]
+      ...[stofn B/body of B]        )
+     )                              ...[stofn C/body of C]
+     (define (E ...)               ) 
+       ...[stofn E/body of E]      ...[stofn B/body of B]
+     )                            )
+     ...[stofn A/body of A]       ...[stofn A/body of A]
+    )                            )
+\end{verbatim}
+
+Fyllið út eftirfarandi töflur með því að setja krossa við sannar fullyrðingar.
+Eitt rangt svar gefur núll í einkunn fyrir dæmið.
+
+kalla má A úr:
 
 
+\begin{tabularx}{\textwidth}{|X|X|X|X|X|}
+    \hline
+    \bo{A} & \bo{B} & \bo{C} & \bo{D} & \bo{E}\\ \hline
+    & & & & \\ \hline
+\end{tabularx}
+
+\newpage
+Kalla má B úr:
 
 
+\begin{tabularx}{\textwidth}{|X|X|X|X|X|}
+    \hline
+    \bo{A} & \bo{B} & \bo{C} & \bo{D} & \bo{E}\\ \hline
+    & & & & \\ \hline
+\end{tabularx}
+
+
+\vspace{1cm}
+
+Kalla má C úr:
+
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|X|}
+    \hline
+    \bo{A} & \bo{B} & \bo{C} & \bo{D} & \bo{E}\\ \hline
+    & & & & \\ \hline
+\end{tabularx}
+
+\vspace{1cm}
+
+Kalla má D úr: 
+
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|X|}
+    \hline
+    \bo{A} & \bo{B} & \bo{C} & \bo{D} & \bo{E}\\ \hline
+    & & & & \\ \hline
+\end{tabularx}
+
+
+\vspace{1cm}
+
+Kalla má E úr:
+
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|X|}
+    \hline
+    \bo{A} & \bo{B} & \bo{C} & \bo{D} & \bo{E}\\ \hline
+    & & & & \\ \hline
+\end{tabularx}
+
+\vspace{1cm}
+
+Staðværar breytur í A má nota í:
+
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|X|}
+    \hline
+    \bo{A} & \bo{B} & \bo{C} & \bo{D} & \bo{E}\\ \hline
+    & & & & \\ \hline
+\end{tabularx}
+
+\vspace{1cm}
+
+Staðværar breytur í B má nota í:
+
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|X|}
+    \hline
+    \bo{A} & \bo{B} & \bo{C} & \bo{D} & \bo{E}\\ \hline
+    & & & & \\ \hline
+\end{tabularx}
+
+\vspace{1cm}
+
+Staðværar breytur í C má nota í:
+
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|X|}
+    \hline
+    \bo{A} & \bo{B} & \bo{C} & \bo{D} & \bo{E}\\ \hline
+    & & & & \\ \hline
+\end{tabularx}
+
+\vspace{1cm}
+
+Staðværar breytur í D má nota í:
+
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|X|}
+    \hline
+    \bo{A} & \bo{B} & \bo{C} & \bo{D} & \bo{E}\\ \hline
+    & & & & \\ \hline
+\end{tabularx}
+
+\vspace{1cm}
+
+Staðværar breytur í E má nota í:
+
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|X|}
+    \hline
+    \bo{A} & \bo{B} & \bo{C} & \bo{D} & \bo{E}\\ \hline
+    & & & & \\ \hline
+\end{tabularx}
+
+
+\newpage
+\section{eitthver forritstexti}
+Eftirfarandi forritstexti er í einhverju ímynduðu forritunarmáli.
+
+\begin{verbatim}
+    void f(x,y)
+    {
+        y = 3;
+        print x,y;
+        x = 2;
+    }
+    int i,a[10];
+    for( i=0 ; i!=10 ; i++ ) a[i]=i+1;
+    f(a[a[0]],a[0]);
+    print a[0], a[1], a[2], a[3];
+\end{verbatim}
+Hvað skrifar þetta forrit (sex gildi í hvert skipti) ef viðföngin eru:
+
+\enum
+\item \bo{Gildisviðföng }
+\item \bo{Tilvísunarviðföng }
+\item \bo{Nafnviðföng}
+\end{enumerate}
+
+\newpage
+\section{Hluti II – Listavinnsla o.fl.}
 
 
 \end{document}
