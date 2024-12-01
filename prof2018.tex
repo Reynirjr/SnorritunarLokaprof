@@ -915,8 +915,16 @@ Hver? Eitt rangt svar gefur \underline{núll} stig.
     ((x)
  \end{verbatim}
 
+ \bo{BNF}
  \begin{verbatim}
-    
+    <exp> ::= x
+            | <exp> + <exp>
+            | ( <exp> )
+ \end{verbatim}
+
+ \bo{EBNF}
+ \begin{verbatim}
+    Expression = x | Expression "+" Expression | "(" Expression ")"
  \end{verbatim}
 
 
