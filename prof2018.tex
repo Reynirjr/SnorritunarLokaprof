@@ -810,7 +810,7 @@ Hver? Eitt rangt svar gefur \underline{núll} stig.
     //Eftir:  E_A
  \end{verbatim}
 
- Gerið ráð fyrir að í klasa B sér bopip f endurskilgreint með
+ Gerið ráð fyrir að í klasa B sér boðið f endurskilgreint með
  \begin{verbatim}
     //Notkun: x.f(...);
     //Fyrir:  F_A
@@ -818,9 +818,23 @@ Hver? Eitt rangt svar gefur \underline{núll} stig.
  \end{verbatim}
 
  Hvaða vensl þurfa þa gilda milli $F_A, E_A, F_B \text{ og } E_B$? Svarið þarf að
- vera tæmandi, þ.e. tilgreina nauðsyndleg og nægjanleg vendl.
+ vera tæmandi, þ.e. tilgreina nauðsyndleg og nægjanleg vensl.
 
  \sv
+ 
+ til að tryggja rétta arfgerð og að undirklasinn B upfylli \bo{Liskov Substitution Principle}
+ þurfa ákveðin vensl að gilda milli forskilyrða og eftirskilyrða boðanna í $f$ í \bo{A} og \bo{B}
+
+ \bo{Liskov Substitution Principle (LSP)}
+
+ \textit{"Ef fyrirhugað er að \bo{S} sé undirklasi \bo{T}, þá ættu hlutir af gerð \bo{T} að geta verið skipt út fyrir hluti af gerð \textbf{S} 
+ án þess að hafi áhrif á réttmæti forritsins."}
+
+ 
+
+
+
+
 
  \newpage
 
@@ -839,6 +853,42 @@ Hver? Eitt rangt svar gefur \underline{núll} stig.
 
 
  \sv
+
+ tilvísunartalning er ein af mörgum ruslasöfnunaraðferðum sem notaðar eru til að stjórna minni í 
+ forritum. Aðferðin felst í því að halda utan um fjölda virkra tilvísana á hvern hlut í forritinu. þegar
+ tilvísunartalning hlutar verður núll, er vitað að engar tilvísanir eru lengur til á hlutinn, og því er hægt 
+ að endurheimta það minni sem hann notar.
+
+ Hvernig tilvísunartalningin virkar:
+
+ \begin{enumerate}
+    \item Uphhafsstilling
+            - Þegar nýr hlutur er búinn til, er tilvísunartalning hans upphafsstillt a \bo{1}, þar sem a.m.k.
+            ein tilvísun a hann (t.d. frá breytu sem heldur utan um hann).
+    \item Aukning tilvísunartalningar:
+            - Þegar ný tilvísun á hlut er búin til(t.d. þegar hluturinn er framsendur í fall, settur í
+              gagnastrúktur eða uthlutað til annarrar breytu), er tilvísunartalningin aukin um 1.
+    \item Minnkun tilvísunartalningar:
+            - Þegar tilvísun er eytt eða breyta sem hélt utan um hlutinn fer úr umfangi (scope), er 
+              tilvísunartalning hans lækkuð um 1.
+    \item Endurheimt minnis:
+            - Ef tilvísunartalning hlutar verður núll eftir að hafa verið lækkuð, er hluturinn ekki lengur
+              apgengilegur og minni hans endurheimt. 
+            - Þetta getur leitt til keðjuverkandi endurheimtar, þar sem hlutur sem er eytt getur haft 
+              tilvísanir á aðra hluti, sem síðan missa eina tilvísun og gætu prðið með
+              tilvísunartalningu núll.
+ \end{enumerate}
+
+ \bo{Fastayrðing gagna}: 
+ \begin{itemize}
+    \item tilvísunartalning hvers hlutar er alltaf jafngild fjölda virkra tilvisana á hann í forritinu.
+            Þetta þýðir að á hverjum tíma keyrslu forritsins:
+            \item tilvísunartalning hlutar endurspeglar nákvæmlega fjölda tilvisana sem eru í notkun á hlutinn,
+            \item Þegar tilvísun er bætt við eða fjarlægð, er tilvisunartalningin uppfærð samstundis til að
+                  viðhalda fastayrðingunni.
+ \end{itemize}
+
+ 
 
  \newpage
  \section{14.}
@@ -863,6 +913,10 @@ Hver? Eitt rangt svar gefur \underline{núll} stig.
     )
     +x
     ((x)
+ \end{verbatim}
+
+ \begin{verbatim}
+    
  \end{verbatim}
 
 
