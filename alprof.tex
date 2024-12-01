@@ -480,6 +480,8 @@ Hvað skrifar þetta forrit (sex gildi í hvert skipti) ef viðföngin eru:
         Athugið að sýna þarf fastayrðingu gagna.
 \end{enumerate}
 
+\vspace{2cm}
+
 \bo{Spurning 10 Möguleikar}
 Hverjar af eftirfarandi fullyrðingum eru í samræmi við meginregluna
 um upplýsingahuld? Það gætu verið núll, ein eða fleiri. Tvö röng
@@ -506,6 +508,142 @@ notendum einingarinnar.
 
 \end{enumerate}
 
+\begin{tabularx}{\textwidth}{|X|X|X|X|X|X|X|X|X|}
+    \hline
+    \bo{a} & \bo{b} & \bo{c} & \bo{d} & \bo{e} & \bo{f} & \bo{g} & \bo{h} & \bo{j} \\ \hline
+     & & & & & & & & \\ \hline
+\end{tabularx}
 
+
+
+\newpage
+
+\bo{Spurning 11 Möguleikar}
+
+    Íhugið klasa A og B þar sem B er undirklasi A. Gerið ráð fyrir að
+    klasi A innihaldi boð f með eftirfarandi lýsingu.
+
+
+    // Notkun: $z = t.f(x);$
+
+
+    // Fyrir: $0.5 \leq x \leq 1.5$ (version 2 er $0.5 \leq x \leq 2.0$ )
+
+
+    // Eftir: $|z - \sqrt{x}| < 0.01$ (version 2 er $|z^2 - x| < 0.01$ )
+
+
+    Gerið ráð fyrir að í klasa B sé boðið f endurskilgreint með
+
+
+    // Notkun: $z = t.f(x);$
+
+
+    // Fyrir: $F_B$
+
+
+    // Eftir: $E_B$
+
+
+    Hverjir af eftirfarandi möguleikum fyrir $F_B$ og $E_B$ væru þá í lagi? Eitt
+    rangt svar gefur núll fyrir dæmið.
+
+    \begin{tabularx}{\textwidth}{|X|X|}
+        \hline
+        $F_B$ & \bo{Í lagi} \\ \hline
+        $0.2 \leq x \leq 1.5 $ & \\ \hline
+        $0.4 < x \leq 1.4 $ & \\ \hline
+        $0.1 \leq x \leq 5.5 $ & \\ \hline
+        $0.9 \leq x \leq 1.5 $& \\ \hline
+        
+    \end{tabularx}
+
+    \begin{tabularx}{\textwidth}{|X|X|}
+        \hline
+        $E_B$ & \bo{Í Lagi} \\ \hline
+        $|z^2 - x| < 0.1 $ & \\ \hline
+        $|z^2 - x| \leq 0.005 $ & \\ \hline
+        $|z^2 - x| < 0.02 $ & \\ \hline
+        
+    \end{tabularx}
+
+
+    \bo{Version 2}
+    \begin{tabularx}{\textwidth}{|X|X|}
+        \hline
+        $F_B$ & \bo{Í lagi} \\ \hline
+        $0.1 \leq x \leq 5.5 $ & \\ \hline
+        $0.2 \leq x \leq 1.5 $ & \\ \hline
+        $0.4 < x \leq 1.4 $ & \\ \hline
+        $0.9 \leq x \leq 1.5 $& \\ \hline
+        
+    \end{tabularx}
+    \begin{tabularx}{\textwidth}{|X|X|}
+        \hline
+        $E_B$ & \bo{Í Lagi} \\ \hline
+        $|z^2 - x| \leq 0.005 $ & \\ \hline
+        $|z^2 - x| \leq 0.1 $ & \\ \hline
+        $|z^2 - x| < 0.02 $ & \\ \hline
+        
+    \end{tabularx}
+
+    \newpage
+    \section{Hluti IV – Ýmislegt}
+
+    \bo{Spurning 12 möguleikar:}
+    \begin{enumerate}
+        \item Lýsið ruslasöfnunaraðferðinni sem gengur undir nafninu
+        tilvísunartalning. Koma þarf fram fastayrðing gagna og undir hvaða
+        kringumstæðum minni er skilað.
+
+        \item Lýsið einum kosti sem ruslasöfnunaraðferðin merkja og sópa hefur
+        fram yfir afritunarsöfnun og einum kosti sem afritunarsöfnun hefur
+        fram yfir merkja og sópa
+    \end{enumerate}
+
+    \bo{Spurning 13 möguleikar}
+    \begin{enumerate}
+        \item Sýnið BNF, EBNF, samhengisfrjálsa mállýsingu (CFG) eða málrit
+        fyrir mál strengja yfir stafrófið $\{a, (, )\}$ þar sem svigar eru í jafnvægi.
+        Dæmi um strengi í málinu
+        \begin{verbatim}
+            \epsilon (tómi strengurinn)
+            a
+            aaa 
+            ()
+            (((a)))
+            a(aa(aa)a)aa
+        \end{verbatim}
+        Dæmi um strengi ekki í málinu.
+        \begin{verbatim}
+            (
+            )
+            )(
+            ((a)
+        \end{verbatim}
+        \item Sýnið BNF, EBNF eða málrit fyrir mál segða yfir stafrófið $\{𝑥, +, (, )\}$.
+        Svigar verða að vera í jafnvægi, + er tvíundaraðgerð og 𝑥 er
+        breytunafn, sem er eina leyfða frumstæða segðin.
+        Dæmi um strengi í málinu
+        \begin{verbatim}
+            x
+            x+x+x
+            (x)
+            (((x)))
+            x+(x+x+(x+x)+x)+x+x
+        \end{verbatim}
+        Dæmi um strengi ekki í málinu,
+        \begin{verbatim}
+            \epsilon (tómi strengurinn)
+            (
+            )
+            2
+            +x
+            xx
+            ((x)
+            y
+        \end{verbatim}
+
+    \end{enumerate}
 
 \end{document}
