@@ -429,5 +429,27 @@ Hvað skrifar þetta forrit (sex gildi í hvert skipti) ef viðföngin eru:
     með því að fjarlægja hausinn null sinnum eða oftar
 \end{enumerate}
 
+\bo{Spurning 8 möguleikar}
+\begin{enumerate}
+    \item Skrifið fall mapreduce í Scheme, CAML, Morpho eða Haskell
+    þannig að (í CAML) segðin mapreduce op f x u sé jafngilt segðinni
+    \text{list\_it} op (map f x) u. Notið aðeins einfaldar innbyggðar aðgerðir í
+    lausninni, so sem hd, tl, :: og ==. Ekki má nota map eða \text{list\_it}.
+    Munið að \text{list\_it} reiknar frá hægri til vinstri.
+
+    \item Skrifið fall revmap í Scheme, CAML, Morpho eða Haskell
+    þannig að (í CAML) segðin revmap f x sé jafngild segðinni
+    rev(map f x), þar sem rev er fallið sem snýr við lista. Notið
+    aðeins einfaldar innbyggðar aðgerðir í lausninni, so sem hd, tl, ::
+    og ==. Ekki má nota map eða \text{it\_list eða list\_it} eða rev eða önnur
+    flókin föll. Þið megið skrifa og nota hjálparföll, sem þurfa þá að
+    sjálfsögðu lýsingu eins og revmap þarf einnig.
+
+    \item   Skrifið halaendurkvæmt fall í Scheme, CAML, MORPHO eða Haskell
+    sem tekur sem viðföng einn lista talna, x, auk tveggja talna $a$ og $b$,
+    og skilar lista þeirra talna $z$ innan $x$ þar sem $a \leq z \leq$. þið munuð 
+    vilja nota hjálparfall.
+\end{enumerate}
+
 
 \end{document}
