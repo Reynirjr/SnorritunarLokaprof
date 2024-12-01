@@ -1,0 +1,226 @@
+\documentclass{article}
+
+% Encodings, page setup, paragraph formatting, font
+\usepackage[top=0.9in, bottom=1in, left=1.5in, right=1.5in]{geometry}
+\usepackage[icelandic]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[sc]{mathpazo}
+\usepackage[parfill]{parskip}
+\usepackage{cancel}
+% Tables and lists
+\usepackage{booktabs,tabularx}
+\usepackage{multirow}
+\usepackage{enumerate}
+\usepackage{adjustbox}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{xcolor}
+% Math
+\usepackage{amsmath, amsfonts, amssymb, amsthm}
+% Graphics
+\usepackage{graphicx}
+\usepackage{forest}
+\usepackage{tikz}
+\usetikzlibrary{positioning, shapes, arrows.meta}
+% Custom Commands til að auðvelda lífið
+\newcommand{\sv}{\textbf{Svar:}}
+\newcommand{\bo}[1]{\textbf{#1}}
+\newcommand{\enum}{\begin{enumerate}[label = \alph*.]}
+
+
+\usepackage{listingsutf8}
+\definecolor{commentcolor}{RGB}{255, 0, 255} % Bleikur
+\definecolor{keywordcolor}{RGB}{139, 69, 19}   % Brúnn
+\definecolor{stringcolor}{RGB}{0, 0, 255}      % Blár
+\definecolor{numbercolor}{RGB}{0, 128, 0}      % Grænn
+\definecolor{identifiercolor}{RGB}{0, 0, 255}
+%Morpho
+\lstdefinelanguage{CustomLang}{
+    alsoletter={=},
+    keywords={rec, fun, if, else, return},
+    sensitive=true,
+    comment=[l]{;;;},
+    commentstyle=\color{commentcolor},
+    morestring=[b]",
+    stringstyle=\color{stringcolor},
+}
+
+\lstset{
+    language=CustomLang,
+    basicstyle=\ttfamily,
+    keywordstyle=\color{keywordcolor},
+    commentstyle=\color{commentcolor},
+    identifierstyle=\color{identifiercolor},
+    stringstyle=\color{stringcolor},   
+    showstringspaces=false,
+    numbers=none,
+    tabsize=2,
+    breaklines=true,
+    columns=fullflexible,
+    keepspaces=true,
+    inputencoding=utf8, 
+    extendedchars=true,  
+    literate=
+        {á}{{\'a}}1
+        {ð}{{\dh}}1
+        {é}{{\'e}}1
+        {í}{{\'i}}1
+        {ó}{{\'o}}1
+        {ú}{{\'u}}1
+        {ý}{{\'y}}1
+        {þ}{{\th}}1
+        {æ}{{\ae}}1
+        {ö}{{\"o}}1
+        {Á}{{\'A}}1
+        {Ð}{{\DH}}1
+        {É}{{\'E}}1
+        {Í}{{\'I}}1
+        {Ó}{{\'O}}1
+        {Ú}{{\'U}}1
+        {Ý}{{\'Y}}1
+        {Þ}{{\TH}}1
+        {Æ}{{\AE}}1
+        {Ö}{{\"O}}1,
+}
+
+
+% Hyphenation
+\hyphenpenalty=5000
+% Page and section numbering
+\setcounter{secnumdepth}{-1} 
+\pagenumbering{gobble}
+\title{Forritunarmál}
+\author{Benjamín}
+\date{11.27.2024}
+
+\begin{document}
+
+\maketitle
+
+\begin{center}
+    \Huge{Lokapróf Forritunarmál 2018-2023}
+\end{center}
+
+\newpage
+
+\section{Lokanir}
+
+\bo{Hverjar eftirfarandi fullyrðinga um lokanir eru sannar? Tvö röng
+svör gefa núll punkta.}
+
+
+\enum
+\item Lokanir eru til í C.
+\item Lokanir eru til í Scheme.
+\item Lokanir eru til í CAML.
+\item Lokanir eru til í Morpho.
+\item Lokanir innihalda fallsbendi.
+\item Lokanir eru nauðsynlegar til að skila staðværu falli sem skilagildi
+      falls í bálkmótuðum forritunarmálum.
+\item Lokanir eru aðeins mögulegar ef vakningarfærslur eru í kös.
+\item Lokanir innihalda stýrihlekk
+\item Lokanir innihalda tengihlekk.
+\item Lokanir innihalda straum.
+\item Lokanir eru nauðsynlegar til að senda staðvær föll sem viðföng í bálkmótuðum forritunarmálum.
+\item Lokanir má nota til að útfæra strauma í scheme.
+
+\end{enumerate}
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|X|X|X|X|X|X|X|X|}
+    \hline
+    \bo{a} & \bo{b} & \bo{c} & \bo{d} & \bo{e} & \bo{f} & \bo{g} & \bo{h} & \bo{j} & \bo{k} & \bo{l} & \bo{m} \\ \hline
+     & & & & & & & & & & & \\ \hline
+\end{tabularx}
+
+\newpage
+
+\bo{Hverjar eftirfarandi fullyrðinga um aðgangshlekki (tengihlekki),
+stýrihlekki og lokanir eru sannar? Tvö röng svör gefa núll punkta.}
+
+\enum
+\item Aðgangshlekkir eru notaðir í bæði bálkmótuðum og öðrum
+forritunarmálum.
+\item Stýrihlekkir eru notaðir bæði í bálkmótuðum og öðrum
+forritunarmálum
+\item Lokanir innihalda aðgangshlekk
+\item Lokanir innihalda stýrihlekk og aðgangshlekk.
+\item Lokanir innihalda vendivistfang og stýrihlekk.
+\item Lokanir innihalda fallsbendi.
+\item Lokanir innihalda fallsbendi og aðgangshlekk.
+\item aðgangshlekkir eru ekki til í Haskell
+\item Lokanir eru ekki til í Scheme
+\item Stýrihlekkir eru ekki til í CAML.
+\item Lokanir eru ekki til í Morpho.
+\item Aðgangshlekkir eru ekki til í Java
+\item Lokanir eru aðeins mögulegar ef vakningarfærslur eru í kös
+\end{enumerate}
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|X|X|X|X|X|X|X|X|}
+    \hline
+    \bo{a} & \bo{b} & \bo{c} & \bo{d} & \bo{e} & \bo{f} & \bo{g} & \bo{h} & \bo{j} & \bo{k} & \bo{l} & \bo{m}  \\ \hline
+     & & & & & & & & & & &  \\ \hline
+\end{tabularx}
+
+\newpage
+
+\bo{Íhugið eftirfarandi forritstexta í Scheme.}
+
+\begin{verbatim}
+(define (p x)
+...(define a 1)
+    (define b (lambda () (+ a x)))
+    (define c (b))
+    (define (d y) (+ x y))
+    (define (e z) (lambda (v) (+ x z v)))
+    (define f (lambda (w) (e w)))
+    (define g (f x))
+    ...
+)
+\end{verbatim}
+
+\enum
+\item Hverjar af breytunum a,…,g inni í p innihalda lokanir?
+\item Fyrir sérhverja breytu sem inniheldur lokun, tilgreinið nafn
+      þess falls sem tengihlekkur lokunarinnar vísar á
+      vakningarfærslu fyrir.
+\end{enumerate}
+
+\newpage
+\section{Vakningarfærsla}
+
+\bo{Vakningarfærsla falls í bálkmótuðu forritunarmáli eins og Scheme
+inniheldur sum eftirfarandi atriða. Hver? Tvö röng svör gefa núll
+stig}
+
+\enum
+\item Staðværar breytur fallsins
+\item Bendi á vakningarfærslu fallsins sem kallaði á fallið
+\item Bendi á vakningarfærslu fallsins sem inniheldur fallið, textalega
+séð, ef eitthvert er
+\item Skráakerfi tölvunnar
+\item Viðföng fallsins
+\item Aðgangshlekk (tengihlekk)
+\item Stýrihlekk
+\item Vendivistfang.
+\item Benda á öll föll sem hægt er að kalla á úr fallinu
+\item Benda á allar lifandi vakningarfærslur
+\item Alla hluti sem til eru í kerfinu.
+\item Vakningarfærslur allra falla sem hægt er að kalla á
+\item Nöfn allra falla sem hægt er að kalla á
+\item Lokun sem vísar á fallið.
+\end{enumerate}
+
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|X|X|X|X|X|X|X|X|X|}
+    \hline
+    \bo{a} & \bo{b} & \bo{c} & \bo{d} & \bo{e} & \bo{f} & \bo{g} & \bo{h} & \bo{j} & \bo{k} & \bo{l} & \bo{m} & \bo{n} \\ \hline
+     & & & & & & & & & & & & \\ \hline
+\end{tabularx}
+
+
+
+
+
+
+
+\end{document}
