@@ -99,7 +99,12 @@
 
 \begin{center}
     \Huge{Lokapróf Forritunarmál 2018, 2019, 2021, 2022,2023}
+
+    \bo{Í þessu samansafni tek ég ekki inn 2020 þar sem það er svo frábrugðið hinum prófunum,
+    einnig sleppi ég stundum 2021 þar sem það er einnig frábrugðið og var covid próf}
 \end{center}
+
+
 
 \newpage
 
@@ -362,6 +367,67 @@ Hvað skrifar þetta forrit (sex gildi í hvert skipti) ef viðföngin eru:
 
 \newpage
 \section{Hluti II – Listavinnsla o.fl.}
+
+\bo{spurning 5 möguleikar}
+\begin{enumerate}
+    \item Skrifið fall í Scheme, CAML, Morpho eða Haskell sem tekur eitt
+    viðfang sem er listi lista af fleytitölum milli 0 og 1 og skilar tölu
+    sem er stærsta lággildi innri listanna, þ.e. stærst af þeim tölum
+    sem fást þegar fundin er minnsta tala í hverjum innri lista. Þið
+    skuluð reikna með því að hágildi í tóma menginu sé 0 og lággildi
+    í tóma menginu sé 1. Munið fallslýsingar, eins og alltaf. Fallið
+    þarf að skila viðeigandi gildi bæði fyrir tóman lista og fyrir lista
+    sem einungis inniheldur tóma lista.
+
+    \item Skrifið halaendurkvæmt fall í Scheme, CAML, Morpho eða Haskell,
+    sem tekur lista talna $x1, \ldots , xn$ sem viðfang og skilar summunni
+    $\sum_{i=1}^{n}X_i^2$. Þið munið þurfa hjálparfall og munið að skrifa réttar
+    notkunarlýsingar. Einungis má nota einföld innbyggð föll svo sem
+    +, *, null? car, cdr og cons, en ekki flóknari föll svo sem foldl eða
+    map.
+
+\end{enumerate}
+
+\bo{spurning 6  möguleikar}
+\begin{enumerate}
+    \item Skrifið fall zip2 í Scheme, CAML, Morpho eða Haskell sem tekur
+    tvíundaraðgerð (fall) og tvo jafnlanga lista sem viðföng og skilar
+    lista þeirra útkomna sem fást þegar tvíundaraðgerðinni er beitt á
+    gildin í listunum, par fyrir par. Til dæmis, í Scheme þá ætti
+    segðin (zip2 + ‘(1 2 3) ‘(4 5 6)) að skila listanum (5 7 9). Notið
+    einungis einfaldar aðgerðir svo sem car, cdr, cons, null?
+
+    \item Skrifið halaendurkæmt fall zipMapRev í Scheme, CAML,
+    Morpho eða Haskell sem tekur tvö viðföng sem eru jafnlangir
+    listar. Fyrra viðfangið skal vera listi einundarfalla, 𝑓1, ... , 𝑓𝑛, og
+    seinna viðfangið skal vera listi gilda 𝑥1, ... , 𝑥𝑛 þannig að sérhvert
+    𝑥𝑖 er löglegt viðfang í samsvarandi 𝑓𝑖. Fallið skal skila
+    viðsnúnum lista gildanna sem föllin skila þegar þeim er beitt á
+    gildin, þ.e. lista með gildunum 𝑓𝑛(𝑥𝑛), ... , 𝑓1(𝑥1), í þeirri röð. Notið
+    einungis einfaldar aðgerðir svo sem car, cdr, cons, null?. Í
+    Morpho má nota lykkju, með fastarðingu lykkju
+\end{enumerate}
+
+\bo{spurning 7 möguleikar}
+\begin{enumerate}
+    \item Skrifið ykkar eigin útgáfur af föllunum tveimur sem í CAML Light
+    eru kölluð it_list og list_it. Í Haskell eru þau kölluð foldl og foldr. Þið
+    megið skrifa þessi föll í Scheme, CAML, Morpho eða Haskell. Notið
+    ekki lykkjur í Morpho. Kallið föllin myLeft og myRight. Þið megið
+    nota aðra röð viðfanga en í it_list og list_it. Sjáið til þess að a.m.k.
+    annað fallið sé halaendurkvæmt og tiltakið hvort það er. Notið
+    aðeins einföld innbyggð föll svo sem car, cdr og null?.
+
+    \item Skrifið tvö föll, findFirst og findLast í Scheme, CAML, Morpho
+    eða Haskell, sem bæði taka eitt viðfang sem skal vera listi
+    heiltalna. Skilagildið úr findFirst skal vera lengsti undirlisti
+    viðfangsins sem hefur null í hausnum. Ef ekkert núll er í
+    viðfanginu skal skila tómum lista. Skilagildið úr findLast skal
+    vera stysti undirlisti viðfangsins sem hefur null í hausnum. Ef
+    viðfangið inniheldur ekkert null skal skila tómum lista. Í þessu
+    dæmi reiknum við með að undirlisti lista sé listi sem fenginn er
+    með því að fjarlægja hausinn null sinnum eða oftar
+\end{enumerate}
 
 
 \end{document}
